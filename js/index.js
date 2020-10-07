@@ -223,6 +223,7 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
+        v
         var imageTag = (obj) => {
           const _start = "<img ";
           const _src = "src='" + obj.src + "' ";
@@ -272,7 +273,7 @@
                 return data+'원';
             };
           }
-
+          
 
         }
 
@@ -359,7 +360,10 @@
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false}
+              {targets :[0], visible: false},
+              { render: function ( data, type, row ) {
+                return (100 * data).toFixed(0) + "%";
+                 }}
             ]
           });
         } else {
