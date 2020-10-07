@@ -363,7 +363,6 @@
               },
               {targets :[0], visible: false},
               {
-                targets: '_all',
                 render : function(data,type,row){
                   if(data.DataType==Number){
                     return parseFloat(data).toFixed(0);
