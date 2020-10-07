@@ -273,7 +273,7 @@
                 return data+'원';
             };
           }
-          else if (data[idx].DataType==Decimal) {
+          else if (data[idx].DataType== Number) {
             
             data[idx]["render"] = function (data, type, row) {
               return parseFloat(data).toFixed(0);
