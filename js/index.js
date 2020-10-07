@@ -274,6 +274,13 @@
             };
           }
           
+          else if (data[idx].title.includes('수')===true || data[idx].title.includes('액')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return parseFloat(data).toFixed(0);
+            };
+          }
+
 
           
         }
@@ -357,21 +364,13 @@
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
-            language : {
-              decimal : ".",
-              decimalPlaces : 0,
-              thousands : "."
-            },
+
             columnDefs: [
               {
                   className: 'dt-center'
               },
               {targets :[0], visible: false}
-              // {
-              //   render : function(data,type,row){
-              //     if(typeof(data)==Number){
-              //       return parseFloat(data).toFixed(0);
-              //     }}}
+
               
 
             ]
