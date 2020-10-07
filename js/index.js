@@ -357,13 +357,16 @@
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
-            
+            language : {
+              decimal : ".",
+              decimalPlaces : 0,
+              thousands : "."
+            },
             columnDefs: [
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false},
-              {  render: $.fn.dataTable.render.number( ',', '.', 0) }
+              {targets :[0], visible: false}
               // {
               //   render : function(data,type,row){
               //     if(typeof(data)==Number){
