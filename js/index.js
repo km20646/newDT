@@ -273,10 +273,10 @@
                 return data+'원';
             };
           }
-          else if (data[idx].DataType!=String) {
+          else if (data[idx].DataType==Decimal) {
             
             data[idx]["render"] = function (data, type, row) {
-              return parseFloat(data).toFixed(2);
+              return parseFloat(data).toFixed(0);
             };
           }
 
