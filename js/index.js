@@ -277,7 +277,7 @@
           
             
             data[idx]["render"] = function (data, type, row) {
-              if(row[0].DataType==Number){
+              if(row[0].DataType!==String){
                 return parseFloat(data).toFixed(0);
               }
                           };
