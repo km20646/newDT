@@ -274,12 +274,7 @@
                 return data+'원';
             };
           }
-          else if (data[idx].DataType== Number) {
-            
-            data[idx]["render"] = function (data, type, row) {
-              return parseFloat(data).toFixed(0);
-            };
-          }
+
 
         }
 
@@ -366,8 +361,18 @@
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false}
-            ]
+              {targets :[0], visible: false},
+              
+
+            ],
+            columnDefs : [{
+                    targets: '_all',
+                    render : function(data,type,row){
+                      if(data.DataType==Number){
+                        return parseFloat(data).toFixed(0);
+                      }
+                    }
+            }]
           });
         } else {
           tableReference = $('#datatable').DataTable({
