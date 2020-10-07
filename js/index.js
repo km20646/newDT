@@ -274,12 +274,14 @@
                 return data+'원';
             };
           }
-
-          else if (data[idx].row[0].DataType!=String) {
+          
             
             data[idx]["render"] = function (data, type, row) {
-              return parseFloat(data).toFixed(0);            };
-          }
+              if(row[0].DataType!=String){
+                return parseFloat(data).toFixed(0);
+              }
+                          };
+          
         }
 
 
