@@ -277,9 +277,10 @@
           
             
             data[idx]["render"] = function (data, type, row) {
-              if(row[0].DataType!==String){
-                return parseFloat(data).toFixed(0);
-              }
+              // if(row[0].DataType===){
+              //   return parseFloat(data).toFixed(0);
+              // }
+              console.log(row[0].DataType);
                           };
           
         }
