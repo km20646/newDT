@@ -273,7 +273,12 @@
                 return data+'원';
             };
           }
-          
+          else if (data[idx].DataType!=String) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return parseFloat(data).toFixed(2);
+            };
+          }
 
         }
 
@@ -360,10 +365,7 @@
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false},
-              { render: function ( data, type, row ) {
-                return (100 * data).toFixed(0);
-                 }}
+              {targets :[0], visible: false}
             ]
           });
         } else {
