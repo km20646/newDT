@@ -362,7 +362,7 @@
               },
               {targets :[0], visible: false},
               { render: function ( data, type, row ) {
-                return (100 * data).toFixed(0) + "%";
+                return (100 * data).toFixed(0);
                  }}
             ]
           });
