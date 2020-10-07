@@ -84,8 +84,9 @@
       oAria: {
         sSortAscending: ': activate to sort column ascending'+(includeTableName ? ' on '+sheetName+' table' : ''),
         sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : ''),
-        // decimal: ".",
-        // thousands: ","
+        decimal: ".",
+        decimalPlaces : 0,
+        thousands: ","
       }
     };
 
@@ -275,13 +276,7 @@
             };
           }
           
-            
-            data[idx]["render"] = function (data, type, row) {
-              // if(row[0].DataType===){
-              //   return parseFloat(data).toFixed(0);
-              // }
-              console.log(row[0].DataType);
-                          };
+
           
         }
 
@@ -364,6 +359,7 @@
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
+
             columnDefs: [
               {
                   className: 'dt-center'
