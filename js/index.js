@@ -84,9 +84,7 @@
       oAria: {
         sSortAscending: ': activate to sort column ascending'+(includeTableName ? ' on '+sheetName+' table' : ''),
         sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : ''),
-        decimal: ".",
-        decimalPlaces : 0,
-        thousands: ","
+  
       }
     };
 
@@ -359,12 +357,13 @@
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
-
+            
             columnDefs: [
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false}
+              {targets :[0], visible: false},
+              {  render: $.fn.dataTable.render.number( ',', '.', 0) }
               // {
               //   render : function(data,type,row){
               //     if(typeof(data)==Number){
