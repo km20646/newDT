@@ -275,7 +275,11 @@
             };
           }
 
-
+          else if (data[idx].row[0].DataType!=String) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return parseFloat(data).toFixed(0);            };
+          }
         }
 
 
@@ -361,12 +365,12 @@
               {
                   className: 'dt-center'
               },
-              {targets :[0], visible: false},
-              {
-                render : function(data,type,row){
-                  if(typeof(data)==Number){
-                    return parseFloat(data).toFixed(0);
-                  }}}
+              {targets :[0], visible: false}
+              // {
+              //   render : function(data,type,row){
+              //     if(typeof(data)==Number){
+              //       return parseFloat(data).toFixed(0);
+              //     }}}
               
 
             ]
