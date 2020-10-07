@@ -223,7 +223,7 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
-        v
+        
         var imageTag = (obj) => {
           const _start = "<img ";
           const _src = "src='" + obj.src + "' ";
