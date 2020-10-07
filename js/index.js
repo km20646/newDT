@@ -244,6 +244,7 @@
         console.log(data);
         for (var idx =0 ; idx< data.length; idx++) {
           console.log(data[idx]);
+          console.log(data[idx].DataType);
           if (data[idx].title.includes('이미지')===true) {
           
             data[idx]["render"] = function (data, type, row) {
