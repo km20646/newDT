@@ -364,7 +364,7 @@
               {targets :[0], visible: false},
               {
                 render : function(data,type,row){
-                  if(data.DataType==Number){
+                  if(typeof(data)==Number){
                     return parseFloat(data).toFixed(0);
                   }}}
               
