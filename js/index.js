@@ -274,7 +274,7 @@
             };
           }
           
-          else if (data[idx].title.includes('수')===true || data[idx].title.includes('액')===true) {
+          else if (data[idx].title.includes('수')===true ||data[idx].title.includes('액')===true ||data[idx].title.includes('량')===true ||data[idx].title.includes('양')===true) {
             
             data[idx]["render"] = function (data, type, row) {
               return parseFloat(data).toFixed(0);
@@ -330,6 +330,7 @@
           tableReference = $('#datatable').DataTable({
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
+            order :[[1,"asc"]],
             stateSave : true,
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
