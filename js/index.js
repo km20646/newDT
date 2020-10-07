@@ -362,17 +362,16 @@
                   className: 'dt-center'
               },
               {targets :[0], visible: false},
+              {
+                targets: '_all',
+                render : function(data,type,row){
+                  if(data.DataType==Number){
+                    return parseFloat(data).toFixed(0);
+                  }}}
               
 
-            ],
-            columnDefs : [{
-                    targets: '_all',
-                    render : function(data,type,row){
-                      if(data.DataType==Number){
-                        return parseFloat(data).toFixed(0);
-                      }
-                    }
-            }]
+            ]
+           
           });
         } else {
           tableReference = $('#datatable').DataTable({
